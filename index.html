@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Секция бокса</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap&subset=cyrillic"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="top">
+
+    <header class="header header-main">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-line"></span>
+                <span class="logo-text">СЕКЦИЯ<br>БОКСА</span>
+            </a>
+            <nav class="nav">
+                <a href="#top" class="active">Главная</a>
+                <a href="#trainers">Тренеры</a>
+                <a href="#schedule">Расписание</a>
+                <a href="#signup">Записаться</a>
+                <a href="auth.html" id="loginLink">Войти</a>
+            </nav>
+            <div class="header-phone">+7 (495) 120-24-24</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="images/ring.jpg" alt="Боксёрский ринг" class="hero-image">
+        <div class="container hero-content">
+            <div class="hero-tagline">Дисциплина. Характер. Результат.</div>
+            <h1>СЕКЦИЯ<br>БОКСА</h1>
+            <p>Твой следующий раунд начинается здесь.<br>Бокс для любого уровня подготовки.</p>
+            <a href="#signup" class="button hero-button">Записаться</a>
+            <div class="stats">
+                <div class="stat"><strong>10+</strong><span>лет на ринге</span></div>
+                <div class="stat"><strong>3</strong><span>тренера</span></div>
+                <div class="stat"><strong>6+</strong><span>лет — старт</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light advantages">
+        <div class="container">
+            <div class="section-label">01 / Преимущества</div>
+            <h2>ПРЕИМУЩЕСТВА</h2>
+            <div class="cards-3">
+                <div class="card">
+                    <div class="card-number">01</div>
+                    <h3>ДЛЯ ЛЮБОГО УРОВНЯ</h3>
+                    <p>Бокс для любого уровня подготовки.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">02</div>
+                    <h3>ГРУППЫ ПО ВОЗРАСТУ</h3>
+                    <p>Дети, подростки и взрослые.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">03</div>
+                    <h3>КОМАНДА ТРЕНЕРОВ</h3>
+                    <p>Алексей Смирнов, Дмитрий Волков и Анна Кузнецова.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section trainers" id="trainers">
+        <div class="container">
+            <div class="section-label">02 / Команда</div>
+            <h2>ТВОЙ УГОЛ РИНГА</h2>
+            <p class="section-text">Опыт, который помогает становиться сильнее.</p>
+            <div class="cards-3" id="trainersList"></div>
+        </div>
+    </section>
+
+    <section class="section section-light schedule" id="schedule">
+        <div class="container">
+            <div class="section-label">03 / Расписание</div>
+            <h2>ВЫБЕРИ СВОЙ РИТМ</h2>
+            <div class="search-box">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#888" stroke-width="1.5">
+                    <circle cx="7" cy="7" r="5.2"></circle>
+                    <line x1="11" y1="11" x2="14.5" y2="14.5"></line>
+                </svg>
+                <input type="text" id="scheduleSearch" placeholder="Поиск по тренеру или дню">
+            </div>
+            <div class="table-wrap">
+                <table class="table table-public">
+                    <thead>
+                        <tr>
+                            <th>День недели</th>
+                            <th>Время</th>
+                            <th>Группа</th>
+                            <th>Тренер</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section signup" id="signup">
+        <div class="container">
+            <div class="section-label">04 / Первый шаг</div>
+            <h2 class="signup-title">НАЧНИ С ПЕРВОЙ ТРЕНИРОВКИ</h2>
+            <p class="section-text">Оставь заявку — мы свяжемся и поможем выбрать группу.</p>
+            <form id="signupForm" class="signup-form">
+                <div class="field">
+                    <label for="signupName">Имя</label>
+                    <input type="text" id="signupName" placeholder="Как к вам обращаться">
+                </div>
+                <div class="field">
+                    <label for="signupPhone">Телефон</label>
+                    <input type="text" id="signupPhone" placeholder="+7 (___) ___-__-__">
+                </div>
+                <div class="field">
+                    <label for="signupGroup">Группа</label>
+                    <select id="signupGroup"></select>
+                </div>
+                <button type="submit" class="button signup-button">Отправить</button>
+            </form>
+            <p id="signupMessage" class="message"></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-name">СЕКЦИЯ БОКСА</div>
+            <div class="footer-address">Александров, ул. Спортивная, 12</div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

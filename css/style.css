@@ -1,0 +1,988 @@
+/* ===== Общие стили ===== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0b0b;
+    color: #ffffff;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1136px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #e60012;
+    color: #ffffff;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #ff1a2b;
+}
+
+.message {
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+.message:empty {
+    display: none;
+}
+
+.message.error {
+    color: #ff5a5a;
+}
+
+.message.success {
+    color: #4cc36b;
+}
+
+.message a {
+    text-decoration: underline;
+}
+
+/* ===== Шапка ===== */
+
+.header {
+    height: 88px;
+}
+
+.header-inner {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    justify-self: start;
+}
+
+.logo-line {
+    width: 32px;
+    height: 3px;
+    background: #e60012;
+}
+
+.logo-text {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.01em;
+}
+
+.header-center {
+    font-size: 12px;
+    color: #aaaaaa;
+    letter-spacing: 0.02em;
+}
+
+.header-center-light {
+    font-size: 14px;
+    color: #cccccc;
+    letter-spacing: 0;
+}
+
+.header-right {
+    justify-self: end;
+}
+
+.header-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    padding: 0 23px;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.header-button:hover {
+    background: #262626;
+}
+
+/* шапка главной страницы */
+
+.header-main {
+    height: 72px;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+    font-size: 12px;
+    color: #888888;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #ffffff;
+}
+
+.header-phone {
+    justify-self: end;
+    font-size: 12px;
+    color: #aaaaaa;
+}
+
+/* ===== Подвал ===== */
+
+.footer {
+    background: #161616;
+    height: 68px;
+}
+
+.footer-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-name {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.footer-address {
+    font-size: 12px;
+    color: #888888;
+}
+
+/* ===== Главная: первый экран ===== */
+
+.hero {
+    position: relative;
+    height: 575px;
+    overflow: hidden;
+    background: #0b0b0b;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 72%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0b0b0b 22%, rgba(11, 11, 11, 0.55) 50%, rgba(11, 11, 11, 0.15) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 97px;
+}
+
+.hero-tagline {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 19px;
+}
+
+.hero h1 {
+    font-size: 84px;
+    font-weight: 800;
+    line-height: 83px;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #dddddd;
+}
+
+.hero-button {
+    width: 116px;
+    height: 44px;
+    margin-top: 25px;
+}
+
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 43px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.stat span {
+    font-size: 10px;
+    color: #888888;
+}
+
+/* ===== Главная: секции ===== */
+
+.section {
+    padding: 62px 0 60px;
+}
+
+.section-light {
+    background: #111111;
+}
+
+.section-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #e60012;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.section-text {
+    font-size: 14px;
+    color: #888888;
+    margin-top: 10px;
+}
+
+.advantages {
+    padding-top: 56px;
+    padding-bottom: 50px;
+}
+
+.advantages h2 {
+    margin-bottom: 36px;
+}
+
+.cards-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: #191919;
+    padding: 24px;
+    height: 148px;
+}
+
+.card-number {
+    font-size: 11px;
+    color: #e60012;
+    margin-bottom: 14px;
+}
+
+.card h3 {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #888888;
+}
+
+/* тренеры */
+
+.trainers h2 {
+    font-size: 34px;
+}
+
+.trainers .cards-3 {
+    margin-top: 32px;
+}
+
+.trainer-card {
+    background: #191919;
+    text-align: center;
+    padding: 38px 24px 32px;
+}
+
+.trainer-card img {
+    display: block;
+    width: 132px;
+    height: 132px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(1);
+}
+
+.trainer-info {
+    padding: 0;
+}
+
+.trainer-number {
+    font-size: 10px;
+    color: #e60012;
+    margin-bottom: 8px;
+}
+
+.trainer-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.trainer-info p {
+    font-size: 12px;
+    color: #888888;
+}
+
+/* расписание */
+
+.schedule {
+    padding-bottom: 56px;
+}
+
+.schedule h2 {
+    margin-bottom: 26px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 0 16px;
+    background: #141414;
+    border: 1px solid #303030;
+    margin-bottom: 25px;
+}
+
+.search-box svg {
+    flex-shrink: 0;
+}
+
+.search-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.search-box input::placeholder {
+    color: #777777;
+}
+
+/* таблицы */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    min-width: 640px;
+}
+
+.table th {
+    background: #222222;
+    color: #888888;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    height: 46px;
+    padding: 0 21px;
+}
+
+.table td {
+    font-size: 13px;
+    padding: 0 21px;
+    height: 56px;
+}
+
+.table tbody tr:nth-child(odd) {
+    background: #191919;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #151515;
+}
+
+.table .th-action {
+    text-align: right;
+}
+
+.table .action-cell {
+    text-align: right;
+}
+
+.table .empty-cell {
+    text-align: center;
+    color: #888888;
+}
+
+.table-public th:nth-child(1) { width: 23%; }
+.table-public th:nth-child(2) { width: 24%; }
+.table-public th:nth-child(3) { width: 22%; }
+
+.table-cabinet th:nth-child(1) { width: 31%; }
+.table-cabinet th:nth-child(2) { width: 28%; }
+.table-cabinet td { height: 50px; }
+
+.table-admin-schedule th:nth-child(1),
+.table-admin-schedule th:nth-child(2),
+.table-admin-schedule th:nth-child(3),
+.table-admin-schedule th:nth-child(4) { width: 22%; }
+.table-admin-schedule td { height: 57px; }
+
+.table-admin-bookings th:nth-child(1) { width: 20%; }
+.table-admin-bookings th:nth-child(2) { width: 20%; }
+.table-admin-bookings th:nth-child(3) { width: 15%; }
+.table-admin-bookings th:nth-child(5) { width: 10%; }
+.table-admin-bookings td { height: 65px; }
+
+.delete-button {
+    height: 34px;
+    padding: 0 16px;
+    background: #e60012;
+    color: #ffffff;
+    border: none;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: #ff1a2b;
+}
+
+/* форма записи на главной */
+
+.signup {
+    padding-top: 64px;
+    padding-bottom: 60px;
+}
+
+.signup .section-label {
+    margin-bottom: 18px;
+}
+
+.signup .signup-title {
+    font-size: 40px;
+    max-width: 560px;
+    line-height: 46px;
+}
+
+.signup .section-text {
+    margin-top: 16px;
+    margin-bottom: 26px;
+}
+
+.signup-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 116px;
+    gap: 20px;
+    align-items: end;
+}
+
+.field label {
+    display: block;
+    font-size: 11px;
+    color: #cccccc;
+    margin-bottom: 8px;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    background: #191919;
+    border: 1px solid #303030;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+}
+
+.field input::placeholder {
+    color: #777777;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: #e60012;
+}
+
+.field select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23aaaaaa' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 36px;
+}
+
+.field select option {
+    background: #191919;
+    color: #ffffff;
+}
+
+.field select:disabled {
+    opacity: 1;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    cursor: default;
+}
+
+.signup-button {
+    height: 50px;
+    width: 116px;
+}
+
+.small-text {
+    font-size: 10px;
+    color: #777777;
+    margin-top: 28px;
+}
+
+/* ===== Страница входа ===== */
+
+.login-page {
+    flex: 1;
+    padding: 68px 0 87px;
+    text-align: center;
+}
+
+.login-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e60012;
+    margin-bottom: 25px;
+}
+
+.login-card {
+    width: min(568px, calc(100% - 32px));
+    margin: 0 auto;
+    background: #1a1a1a;
+    padding: 36px;
+    text-align: left;
+}
+
+.login-card h1 {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    margin-top: 6px;
+}
+
+.login-card h1.small-title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 800;
+}
+
+.login-text {
+    font-size: 14px;
+    color: #999999;
+    margin-top: 23px;
+}
+
+.tabs {
+    display: flex;
+    margin-top: 11px;
+    border-bottom: 2px solid #303030;
+}
+
+.tab {
+    flex: 1;
+    height: 40px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    color: #999999;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.tab:hover {
+    color: #ffffff;
+}
+
+.tab.active {
+    color: #ffffff;
+    font-weight: 700;
+    border-bottom-color: #e60012;
+}
+
+.login-form {
+    margin-top: 39px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    background: #151515;
+    border: 1px solid #303030;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #777777;
+}
+
+.form-group input:focus {
+    border-color: #e60012;
+}
+
+.wide-button {
+    width: 100%;
+    height: 48px;
+    font-size: 13px;
+}
+
+.login-form .message {
+    margin-top: -8px;
+    margin-bottom: 14px;
+}
+
+.login-hint {
+    margin-top: 26px;
+    font-size: 12px;
+    color: #888888;
+}
+
+.login-hint a {
+    cursor: pointer;
+}
+
+.login-hint a:hover {
+    color: #ffffff;
+}
+
+/* ===== Личный кабинет и админка ===== */
+
+.page-main {
+    flex: 1;
+    padding: 58px 0 60px;
+}
+
+.red-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e60012;
+    margin-bottom: 20px;
+}
+
+.cabinet-name {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 44px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+.cabinet-group {
+    font-size: 18px;
+    color: #bbbbbb;
+    margin-top: 18px;
+}
+
+.cabinet-text {
+    font-size: 13px;
+    color: #888888;
+    margin-top: 19px;
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 68px;
+    margin-bottom: 23px;
+}
+
+.block-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.count {
+    font-size: 11px;
+    color: #888888;
+    line-height: 14px;
+}
+
+.admin-main {
+    padding-top: 47px;
+}
+
+.admin-title {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 52px;
+    letter-spacing: -0.02em;
+}
+
+.admin-main .block-title {
+    font-size: 20px;
+    margin-top: 44px;
+    margin-bottom: 22px;
+}
+
+.admin-main .block-title-next {
+    margin-top: 65px;
+}
+
+.admin-main .search-box {
+    margin-bottom: 21px;
+}
+
+.add-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 111px;
+    gap: 18px;
+    align-items: end;
+    background: #191919;
+    padding: 24px 21px 22px;
+}
+
+.add-form .field input,
+.add-form .field select {
+    background: #111111;
+}
+
+.add-button {
+    height: 50px;
+}
+
+/* ===== Адаптивность ===== */
+
+@media (max-width: 1000px) {
+    .hero h1 {
+        font-size: 64px;
+        line-height: 64px;
+    }
+
+    .hero {
+        height: 520px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .cards-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: auto;
+    }
+
+    .signup-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .signup-button {
+        width: 100%;
+    }
+
+    .add-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .add-button {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 700px) {
+    .header-main {
+        height: auto;
+    }
+
+    .header-main .header-inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 12px;
+        padding: 14px 0;
+    }
+
+    .header-main .logo,
+    .header-main .header-phone {
+        justify-self: center;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 18px;
+    }
+
+    .header {
+        height: 72px;
+    }
+
+    .header-main {
+        height: auto;
+    }
+
+    .header-center {
+        display: none;
+    }
+
+    .header-inner {
+        grid-template-columns: 1fr auto;
+    }
+
+    .header-main .header-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        height: 560px;
+    }
+
+    .hero-content {
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        line-height: 50px;
+    }
+
+    .section h2,
+    .trainers h2 {
+        font-size: 28px;
+    }
+
+    .signup .signup-title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .signup-form,
+    .add-form {
+        grid-template-columns: 1fr;
+    }
+
+    .login-card {
+        padding: 24px 20px;
+    }
+
+    .login-card h1 {
+        font-size: 24px;
+    }
+
+    .login-card h1.small-title {
+        font-size: 20px;
+    }
+
+    .tab {
+        font-size: 11px;
+    }
+
+    .cabinet-name {
+        font-size: 30px;
+    }
+
+    .admin-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .footer {
+        height: auto;
+        padding: 18px 0;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+/* сообщение, если JSON не удалось загрузить */
+
+.load-error {
+    background: #e60012;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 12px 24px;
+    text-align: center;
+}
